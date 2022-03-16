@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require 'DB/functions/DB.php';
     require 'controller/product.php';
 
@@ -12,23 +13,27 @@
     <title>Document</title>
 </head>
 <body>
+    <?php if (isset($_SESSION['message'])):?>
+        <p><?php echo $_SESSION['message']; unset($_SESSION['message']);?></p>
+    <?php endif;?>    
     <h1>Products</h1>
     <?php $records = getProducts(); ?>
     <?php if ($records && mysqli_num_rows($records) > 0): ?>
         
         <table>
             <tr>
-                <td>Id</td>
+                <td>S/N</td>
                 <td>Name</td>
                 <td>Edit</td>
                 <td>Delete</td>
             </tr>
+            <?php $counter = 0;?>
         <?php while( $row = mysqli_fetch_assoc($records)): ?>
             <tr>
-                <td><?php echo $row['id'];?></td>
+                <td><?php $counter += 1;echo $counter;?></td>
                 <td><?php echo $row['name'];?></td>
-                <td><a href="index.php?edit=<?php echo $rows['id']?>"></a></td>
-                <td><a href="index.php?delete=<?php echo $rows['id']?>"></a></td>
+                <td><a href="index.php?edit=<?php echo $row['id']?>">edit</a></td>
+                <td><a href="index.php?delete=<?php echo $row['id']?>">delete</a></td>
             </tr>
             
         <?php endwhile; ?>
@@ -48,8 +53,15 @@
             <?php endforeach;?>
         <?php endif;?>
         
-        <input type="text" name="product-name" id="" value="<?php if(isset($_POST['product-name'])) echo $_POST['product-name']; ?>" placeholder="product name">
-        <input type="submit" value="Add" name="add-btn">
+
+         <?php if (isset($product_name)):?> 
+            <input type="text" name="update-product-name" value="<?php echo $product_name;?>" id="">
+            <input type="text" name="update-id" id="" value="<?php echo $product_id;?>" hidden>
+            <input type="submit" value="Update" name="update">
+         <?php else:?>
+            <input type="text" name="product-name" id="" value="<?php if(isset($_POST['product-name'])) echo $_POST['product-name']; ?>" placeholder="product name">
+            <input type="submit" value="Add" name="add-btn">
+        <?php endif;?>
     </form>
 
 </body>
