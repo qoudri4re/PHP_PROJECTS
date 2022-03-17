@@ -6,4 +6,3 @@ tabular form, with options that allows deleting, updating and adding products.
 Languages used
       *HTML
       *PHP
-https://crud--heroku.herokuapp.com/
