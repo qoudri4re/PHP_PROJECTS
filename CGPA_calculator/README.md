@@ -1,6 +1,8 @@
-A PHP project that calculates GP
+**GPA calculator**
+
+A PHP project that calculates Grade point average
 
 Languages used
-       - PHP
-       - HTML       
- heroku https://gpa-calculator-heroku.herokuapp.com/      
+* PHP
+* HTML
+ <https://gpa--calculator.herokuapp.com/>
