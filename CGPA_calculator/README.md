@@ -3,6 +3,6 @@
 A PHP project that calculates Grade point average
 
 Languages used
-* PHP
-* HTML
+*     PHP
+*     HTML
  <https://gpa--calculator.herokuapp.com/>
