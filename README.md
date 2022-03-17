@@ -1,1 +1,1 @@
-A repository containing a compilation of my php pprojects
+A repository containing a compilation of my php projects
