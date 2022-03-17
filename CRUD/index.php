@@ -1,5 +1,5 @@
 <?php 
-//dd
+
     session_start();
     require 'DB/functions/DB.php';
     require 'controller/product.php';
