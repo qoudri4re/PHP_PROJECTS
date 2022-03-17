@@ -4,5 +4,6 @@ A simple CRUD app that fetches a list of product from DB, displays them on a pag
 tabular form, with options that allows deleting, updating and adding products.
 
 Languages used
-      *HTML
-      *PHP
+*     PHP
+*     HTML
+<https://crud-----app.herokuapp.com/index.php>
